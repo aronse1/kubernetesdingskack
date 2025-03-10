@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "false"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"IngressClass","metadata":{"annotations":{"ingressclass.kubernetes.io/is-default-class":"false"},"creationTimestamp":"2025-03-10T13:27:21Z","generation":1,"name":"nginxxxpallmann","resourceVersion":"97364","uid":"6e3e5e65-7525-48d3-a7c0-5cb00a71cbd3"},"spec":{"controller":"ingress-nginx-controller/nginx-muellabfuhr"}}
+  creationTimestamp: "2025-03-10T13:36:42Z"
+  generation: 1
+  name: nginxxxpallmann
+  resourceVersion: "100821"
+  uid: 8092bb82-5d09-43d5-94b8-99fe730fbc4c
+spec:
+  controller: ingress-nginx-controller/nginxxxpallmann
