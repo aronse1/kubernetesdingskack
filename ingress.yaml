@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginxxxpallman
   rules:
-  - host: podinfo.local
+  - host: thomas.schoeppi5.de
     http:
       paths:
       - path: /
