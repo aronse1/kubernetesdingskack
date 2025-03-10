@@ -1,12 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: podinfo
+  name: podinfo-ingress
+  namespace: pallmann
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginxxxpallman
   rules:
-  - host: podinfo.example.com
+  - host: podinfo.local
     http:
       paths:
       - path: /
