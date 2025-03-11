@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-lesen
-  namespace: wer-das-liest-kann-lesen
+  namespace: ich-kann-das-alles-nicht-mehr
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -23,7 +23,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-lesen-canary
-  namespace: wer-das-liest-kann-lesen
+  namespace: ich-kann-das-alles-nicht-mehr
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/canary: "true"

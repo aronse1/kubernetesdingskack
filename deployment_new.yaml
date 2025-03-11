@@ -6,7 +6,7 @@ metadata:
     app: podinfo
     version: green
 spec:
-  replicas: 2
+  replicas: 20
   selector:
     matchLabels:
       app: podinfo
@@ -29,13 +29,10 @@ spec:
           limits:
             cpu: "500m"
             memory: "256Mi"
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - podinfo
-            topologyKey: "kubernetes.io/hostname"
+        volumeMounts:
+        - name: podinfo-storage  # Mount the persistent volume
+          mountPath: /app/data   # Container path to store the data
+      volumes:
+      - name: podinfo-storage
+        persistentVolumeClaim:
+          claimName: podinfo-pvc
