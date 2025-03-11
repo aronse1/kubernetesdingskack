@@ -5,7 +5,7 @@ metadata:
   labels:
     app: podinfo
 spec:
-  replicas: 3  # Mehrere Pods für Hochverfügbarkeit
+  replicas: 3
   selector:
     matchLabels:
       app: podinfo
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: podinfo
-        image: ghcr.io/stefanprodan/podinfo:latest
+        image: ghcr.io/stefanprodan/podinfo:6.6.3
         ports:
         - containerPort: 9898
         resources:

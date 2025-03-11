@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: podinfo-ingress
-  namespace: pallmann
+  name: ingress-lesen
+  namespace: wer-das-liest-kann-lesen
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginxxxpallman
+  ingressClassName: nginx
   rules:
-  - host: thomas.schoeppi5.de
+  - host: engelhatt.k8s.schoeppi5.de
     http:
       paths:
       - path: /
