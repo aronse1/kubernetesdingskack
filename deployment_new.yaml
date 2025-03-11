@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo
+  name: podinfo-green
   labels:
     app: podinfo
+    version: green
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: podinfo
+      version: green
   template:
     metadata:
       labels:
         app: podinfo
+        version: green
     spec:
       containers:
       - name: podinfo
-        image: ghcr.io/stefanprodan/podinfo:6.6.3
+        image: ghcr.io/stefanprodan/podinfo:latest
         ports:
         - containerPort: 9898
         resources:

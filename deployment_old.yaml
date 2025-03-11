@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo-blue
+  labels:
+    app: podinfo
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podinfo
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: podinfo
+        version: blue
+    spec:
+      containers:
+      - name: podinfo
+        image: ghcr.io/stefanprodan/podinfo:6.6.3
+        ports:
+        - containerPort: 9898
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - podinfo
+            topologyKey: "kubernetes.io/hostname"
