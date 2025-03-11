@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: podinfo-pv
+  name: podinfo-pv-bitte-helfen-sie-mir-jetzt
 spec:
   capacity:
     storage: 10Gi   # Der Speicherplatz, der für den Pod verfügbar ist

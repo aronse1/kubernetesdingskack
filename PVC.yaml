@@ -2,9 +2,11 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: podinfo-pvc
+  namespace: ich-kann-das-alles-nicht-mehr
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 10Gi   # Menge des angeforderten Speichers
+  volumeName: podinfo-pv-bitte-helfen-sie-mir-jetzt  # Name des PV, das verwendet werden soll
